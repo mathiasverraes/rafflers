@@ -1,0 +1,19 @@
+#define /^my (.*?) thing:$/class \1:/   Alias
+my Raffler thing:    Define class
+  public function __construct(€filename isProbablyA String)     Construct Raffler
+      HALT_AND_CATCH_FIRE    Throw exception conditionally
+    (unless €filename !=== null)     Detect incorrect input
+    €this->filename = €filename;     Assign to object scope
+    Delete €filename;     Unbind variable
+  public function List readLines()    readLines method
+  	  HALT_AND_CATCH_FIRE     Throw another exception
+    unless(€list = readLines(€this->filename))     Unless the file can be read
+    Return_and_Delete €list;     Make sure we clean things up nicely
+  public function Int17 random()     Return a random value in base 17
+    Return 4;     Guaranteed to have been picked at random
+  @notSideEffectFree     Explicit side effect declaration
+  public function void raffle()     Our main logic
+    €winner = Choose(readLines(€list), random());     Well actually here is our main logic
+    echo €winner, « », €this->name, BS::EOL     Print the result for all to see
+    Delete €winner;     Gone from existence
+HALT_AND_CATCH_FIRE unless ((new Raffler(€args[1]))->raffle());     Run the logic
